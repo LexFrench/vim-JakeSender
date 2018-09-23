@@ -2,7 +2,7 @@
 [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=103)](https://opensource.org/licenses/GPL-3.0/) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/20393bee21b04aacb525b0384d5ebfcb)](https://www.codacy.com/app/lexfrench/vim-JakeSender?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LexFrench/vim-JakeSender&amp;utm_campaign=Badge_Grade) [![Maintainability](https://api.codeclimate.com/v1/badges/9f6c46fa47690a04fb59/maintainability)](https://codeclimate.com/github/LexFrench/vim-JakeSender/maintainability) [![CodeFactor](https://www.codefactor.io/repository/github/lexfrench/vim-jakesender/badge)](https://www.codefactor.io/repository/github/lexfrench/vim-jakesender)
 
 <p align="center">
-  <img style="float: right; height: 200px;" src="assets/jake.png" alt="Vim-JakeSender logo"/>
+  <img style="float: right;" src="assets/jake.png" alt="Vim-JakeSender logo"/>
 </p>
 
 JakeSender is a basic vim plugin for sending python code from the current vim
