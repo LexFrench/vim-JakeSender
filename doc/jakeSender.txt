@@ -1,0 +1,180 @@
+*jakeSender.txt* Plugin for sending python to Maya and Motionbuilder
+
+                         JakeSender REFERENCE MANUAL~
+
+==============================================================================
+CONTENTS                                                  *jakeSenderContents*
+
+    1.Intro........................|JakeSender|
+    2.Requirements.................|JakeSenderRequirements|
+    3.Installation.................|JakeSenderInstallation|
+    4.Configuring Maya.............|JakeSenderConfigMaya|
+    5.Configuring Motionbuilder....|JakeSenderConfigMobu|
+    6.Configuration Options........|JakeSenderConfigOptions|
+    7.Commands.....................|JakeSenderCommands|
+    8.Key Mappings.................|JakeSenderKeys|
+    9.Changelog....................|JakeSenderChangeLog|
+   10.License......................|JakeSenderLicense|
+
+==============================================================================
+1. Intro                                                          *JakeSender*
+
+JakeSender is a basic vim plugin for sending python code from the current vim
+buffer (or visual selection) to Autodesk's Maya or Autodesk's Motionbuilder
+
+Jake is a good boy (sic) that will hide your commands, like a bone, in a
+special safe place ($TEMPDIR) and then like Lassie, go tell Maya or
+Motionbuilder where to find the file and to execute the content.
+
+==============================================================================
+2. Requirements                                       *JakeSenderRequirements*
+
+vim or neovim must have python support enabled. To check:
+>
+    :echo has ('python')
+<
+
+==============================================================================
+3. Installation                                       *JakeSenderInstallation*
+
+1. Extract the plugin file in your ~/.vim (*nix).
+2. Next, to finish installing the help file run:
+>
+    :helptags ~/.vim/doc
+<
+See |add-local-help| for more details.
+
+==============================================================================
+4. Configuring Maya                                     *JakeSenderConfigMaya*
+
+In order to send commands to Maya, you'll need to enable the command port on
+startup. This can be done by adding the following to your `userSetup.py`
+file in your Maya scripts folder.
+
+1.Create a `userSetup.py` file if you don't already have one
+
+>
+    touch ~/maya/scripts/userSetup.py
+<
+
+2. Add the following 
+>
+    import maya.cmds as cmds
+
+    cmds.commandPort(name=":8722",
+                     sourceType="mel",
+                     noreturn=False,
+                     echoOutput=False,
+                     bufferSize=4096)
+<
+
+==============================================================================
+5. Configuring Motionbuilder                            *JakeSenderConfigMobu*
+
+In order to send commands to Motionbuilder, you'll need to enable the python
+server in the Motionbuilder Preferences.
+    http://bit.ly/MobuPythonPrefs
+
+==============================================================================
+6. Configuration Options                             *JakeSenderConfigOptions*
+
+|'jakeSenderHost'|                             Host's address to send commands
+
+|'jakeSenderMayaPort'|                         Maya's commandPort port..
+
+|'jakeSenderMobuPort'|                         Motionbuilder's python telnet
+                                               server port
+
+------------------------------------------------------------------------------
+                                                            *'jakeSenderHost'*
+
+Values: arbitrary string.
+Default: "localhost"
+
+This is the server address of the command port or telnet server that you want
+to send python commands to. In 99.99999% you will want this to be set to 
+localhost or 127.0.0.1 for your local computer.
+
+------------------------------------------------------------------------------
+                                                        *'jakeSenderMayaPort'*
+
+Values: interger value between 0-65535
+Default: 8722
+
+This is the port that Maya's commandPort server is listening on.
+
+See |JakeSenderConfigMaya| on how to change this port to something else.
+
+------------------------------------------------------------------------------
+                                                        *'jakeSenderMobuPort'*
+
+Values: interger value between 0-65535
+Default: 4242
+
+This is the port that Motionbuilder's telnet server is listening on.
+
+==============================================================================
+7. Commands                                               *JakeSenderCommands*
+
+The following commands are available to send the buffer content to supported
+hosts (Maya and Motionbuilder)
+
+    :SendBufferToMaya                                      |:SendBufferToMaya|
+    :SendBufferToMobu                                      |:SendBufferToMobu|
+    :SendLineToMaya                                        |:SendLineToMaya|
+    :SendLineToMobu                                        |:SendLineToMobu|
+
+*:SendBufferToMaya*
+
+  Sends the current buffer OR visual selection to Maya's command port
+
+*:SendBufferToMobu*
+  Sends the current buffer OR visual selection to Motionbuilder's telnet server
+
+*:SendLineToMaya*
+  Sends the current (single) line to Maya's command port
+
+*:SendLineToMobu*
+  Sends the current (single) line to Motionbuilder's telnet server
+
+==============================================================================
+8. Key Mappings                                               *JakeSenderKeys*
+
+The following key mappings are provided by default:
+>
+  nnoremap <leader>m SendBufferToMaya<cr>
+  vnoremap <leader>m SendBufferToMaya<cr>
+
+  nnoremap <leader>x SendBufferToMobu<cr>
+  vnoremap <leader>x SendBufferToMobu<cr>
+
+  nnoremap <leader>lm SendLineToMaya<cr>
+  vnoremap <leader>lm SendLineToMaya<cr>
+
+  nnoremap <leader>lx SendLineToMobu<cr>
+  vnoremap <leader>lx SendLineToMobu<cr>
+<
+
+==============================================================================
+9. Change Log                                            *JakeSenderChangeLog*
+
+0.0.1
+    - First version that is opened to the public (Please GOD WORK)
+
+==============================================================================
+10. License                                                *JakeSenderLicense*
+
+Copyright (C) 2018 Alexander French
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>
