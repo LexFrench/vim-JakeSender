@@ -48,16 +48,16 @@ endif
 " Key Mappings
 
 nnoremap <leader>m :SendBufferToMaya<cr>
-vnoremap <leader>m :SendBufferToMaya<cr>
+vnoremap <leader>m :<C-U>SendBufferToMaya<cr>
 
 nnoremap <leader>x :SendBufferToMobu<cr>
-vnoremap <leader>x :SendBufferToMobu<cr>
+vnoremap <leader>x :<C-U>SendBufferToMobu<cr>
 
 nnoremap <leader>lm :SendLineToMaya<cr>
-vnoremap <leader>lm :SendLineToMaya<cr>
+vnoremap <leader>lm :<C-U>SendLineToMaya<cr>
 
 nnoremap <leader>lx :SendLineToMobu<cr>
-vnoremap <leader>lx :SendLineToMobu<cr>
+vnoremap <leader>lx :<C-U>SendLineToMobu<cr>
 
 " Python code (This is where the magic is)
 

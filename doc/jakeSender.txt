@@ -142,17 +142,17 @@ hosts (Maya and Motionbuilder)
 
 The following key mappings are provided by default:
 >
-  nnoremap <leader>m SendBufferToMaya<cr>
-  vnoremap <leader>m SendBufferToMaya<cr>
+    nnoremap <leader>m :SendBufferToMaya<cr>
+    vnoremap <leader>m :<C-U>SendBufferToMaya<cr>
 
-  nnoremap <leader>x SendBufferToMobu<cr>
-  vnoremap <leader>x SendBufferToMobu<cr>
+    nnoremap <leader>x :SendBufferToMobu<cr>
+    vnoremap <leader>x :<C-U>SendBufferToMobu<cr>
 
-  nnoremap <leader>lm SendLineToMaya<cr>
-  vnoremap <leader>lm SendLineToMaya<cr>
+    nnoremap <leader>lm :SendLineToMaya<cr>
+    vnoremap <leader>lm :<C-U>SendLineToMaya<cr>
 
-  nnoremap <leader>lx SendLineToMobu<cr>
-  vnoremap <leader>lx SendLineToMobu<cr>
+    nnoremap <leader>lx :SendLineToMobu<cr>
+    vnoremap <leader>lx :<C-U>SendLineToMobu<cr>
 <
 
 ==============================================================================

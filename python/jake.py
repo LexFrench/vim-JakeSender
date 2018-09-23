@@ -14,7 +14,7 @@ import tempfile
 import vim
 
 from hosts import Hosts, host_factory
-from vimUtils import BufferRange
+from vim_utils import BufferRange
 
 
 # Get the globals from the vim config settings
