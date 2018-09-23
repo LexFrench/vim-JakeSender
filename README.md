@@ -1,5 +1,7 @@
 # vim-JakeSender
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f11e7f27ab6240068dfed87c6dccbe06)](https://app.codacy.com/app/lexfrench/vim-JakeSender?utm_source=github.com&utm_medium=referral&utm_content=LexFrench/vim-JakeSender&utm_campaign=Badge_Grade_Dashboard)
+
 JakeSender is a basic vim plugin for sending python code from the current vim
 buffer (or visual selection) to Autodesk's Maya or Autodesk's Motionbuilder
 
