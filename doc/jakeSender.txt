@@ -121,15 +121,22 @@ hosts (Maya and Motionbuilder)
 
     :SendBufferToMaya                                      |:SendBufferToMaya|
     :SendBufferToMobu                                      |:SendBufferToMobu|
+    :SendSelectionToMaya                                   |:SendSelectionToMaya|
+    :SendSelectionToMobu                                   |:SendSelectionToMobu|
     :SendLineToMaya                                        |:SendLineToMaya|
     :SendLineToMobu                                        |:SendLineToMobu|
 
 *:SendBufferToMaya*
-
-  Sends the current buffer OR visual selection to Maya's command port
+  Sends the current buffer to Maya's command port
 
 *:SendBufferToMobu*
-  Sends the current buffer OR visual selection to Motionbuilder's telnet server
+  Sends the current buffer to Motionbuilder's telnet server
+
+*:SendSelectionToMaya*
+  Send the current visual selection to Maya's command port
+
+*:SendSelectionToMobu*
+  Send the current visual selection to Motionbuilder's telnet server
 
 *:SendLineToMaya*
   Sends the current (single) line to Maya's command port
@@ -153,6 +160,13 @@ The following key mappings are provided by default:
 
     nnoremap <leader>lx :SendLineToMobu<cr>
     vnoremap <leader>lx :<C-U>SendLineToMobu<cr>
+
+
+    nnoremap <leader>sm :SendSelectionToMaya<cr>
+    vnoremap <leader>sm :<C-U>SendSelectionToMaya<cr>
+
+    nnoremap <leader>sx :SendSelectionToMobu<cr>
+    vnoremap <leader>sx :<C-U>SendSelectionToMobu<cr>
 <
 
 ==============================================================================
@@ -160,6 +174,11 @@ The following key mappings are provided by default:
 
 0.0.1
     - First version that is opened to the public (Please GOD WORK)
+
+0.0.2
+    - Added SendSelectionToMaya and SendSelectionToMobu to fix issue with
+      sending trying to send the full buffer and instead sending the previous
+      visual selection.
 
 ==============================================================================
 10. License                                                *JakeSenderLicense*

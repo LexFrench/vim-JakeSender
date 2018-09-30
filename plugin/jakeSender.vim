@@ -47,17 +47,29 @@ endif
 
 " Key Mappings
 
+" Send buffer to Maya hotkeys
 nnoremap <leader>m :SendBufferToMaya<cr>
 vnoremap <leader>m :<C-U>SendBufferToMaya<cr>
 
+" Send buffer to Mobu hotkeys
 nnoremap <leader>x :SendBufferToMobu<cr>
 vnoremap <leader>x :<C-U>SendBufferToMobu<cr>
 
+" Send current line to Maya hotkeys
 nnoremap <leader>lm :SendLineToMaya<cr>
 vnoremap <leader>lm :<C-U>SendLineToMaya<cr>
 
+" Send current line to Mobu hotkeys
 nnoremap <leader>lx :SendLineToMobu<cr>
 vnoremap <leader>lx :<C-U>SendLineToMobu<cr>
+
+" Send Selection to Maya hotkeys
+nnoremap <leader>sm :SendSelectionToMaya<cr>
+vnoremap <leader>sm :<C-U>SendSelectionToMaya<cr>
+
+" Send Selection to Mobu hotkeys
+nnoremap <leader>sx :SendSelectionToMobu<cr>
+vnoremap <leader>sx :<C-U>SendSelectionToMobu<cr>
 
 " Python code (This is where the magic is)
 
@@ -80,8 +92,12 @@ import jake
 # Setup public methods
 send_current_line_to_maya = jake.send_current_line_to_maya
 send_current_line_to_mobu = jake.send_current_line_to_mobu
+
 send_buffer_to_maya = jake.send_buffer_to_maya
 send_buffer_to_mobu = jake.send_buffer_to_mobu
+
+send_selection_to_maya = jake.send_selection_to_maya
+send_selection_to_mobu = jake.send_selection_to_mobu
 
 EOF
 
@@ -91,3 +107,5 @@ command! -nargs=0 SendLineToMaya :py send_current_line_to_maya()
 command! -nargs=0 SendLineToMobu :py send_current_line_to_mobu()
 command! -nargs=0 SendBufferToMaya :py send_buffer_to_maya()
 command! -nargs=0 SendBufferToMobu :py send_buffer_to_mobu()
+command! -nargs=0 SendSelectionToMaya :py send_selection_to_maya()
+command! -nargs=0 SendSelectionToMobu :py send_selection_to_mobu()

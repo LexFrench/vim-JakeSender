@@ -83,8 +83,10 @@ Please see the vim help system for full documentation of all options: `:help jak
 ### Commands
 
 The following commands are available to send the buffer content to supported hosts (Maya and Motionbuilder):
-  * `SendBufferToMaya` : Sends the current buffer OR visual selection to Maya's command port
-  * `SendBufferToMobu` : Sends the current buffer OR visual selection to Motionbuilder's telnet server
+  * `SendBufferToMaya` : Sends the current buffer to Maya's command port
+  * `SendBufferToMobu` : Sends the current buffer to Motionbuilder's telnet server
+  * `SendSelectionToMobu` : Sends the visual selection to Motionbuilder's telnet server
+  * `SendSelectionToMobu` : Sends the visual selection to Motionbuilder's telnet server
   * `SendLineToMaya`   : Sends the current (single) line to Maya's command port
   * `SendLineToMobu`   : Sends the current (single) line to Motionbuilder's telnet server
 
