@@ -73,7 +73,7 @@ vnoremap <leader>sx :<C-U>SendSelectionToMobu<cr>
 
 " Let's check that we have python support (for people that didn't RTFM)
 if !has ('python')
-    echoerr "vim-JakeSender requires Vim compiled with Python support."
+    echoerr 'vim-JakeSender requires Vim compiled with Python support.'
     finish
 endif
 "
