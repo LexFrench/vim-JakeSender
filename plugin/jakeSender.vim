@@ -71,6 +71,12 @@ vnoremap <leader>sm :<C-U>SendSelectionToMaya<cr>
 nnoremap <leader>sx :SendSelectionToMobu<cr>
 vnoremap <leader>sx :<C-U>SendSelectionToMobu<cr>
 
+" Let's check that we have python support (for people that didn't RTFM)
+if !has ('python')
+    echoerr "vim-JakeSender requires Vim compiled with Python support."
+    finish
+endif
+"
 " Python code (This is where the magic is)
 
 python << EOF

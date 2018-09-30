@@ -179,6 +179,7 @@ The following key mappings are provided by default:
     - Added SendSelectionToMaya and SendSelectionToMobu to fix issue with
       sending trying to send the full buffer and instead sending the previous
       visual selection.
+    - Checking for python support upon loading the plugin
 
 ==============================================================================
 10. License                                                *JakeSenderLicense*
